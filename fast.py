@@ -3,6 +3,7 @@ import time
 
 from PIL import Image
 from pytesseract import pytesseract
+import sys
 
 def take_screen():
     im1 = pyautogui.screenshot()  # return an image object
@@ -18,17 +19,48 @@ def pic_to_text():
     return (main_text)
     #print(main_text)
 
-time.sleep(5)
-take_screen()
-text = pic_to_text()
-for j in range(10):
-    for i in range(len(text)):
-        if text[i].isalpha() == True:
-            pyautogui.write(text[i])
-        else:
+def slow_bot():
+    time.sleep(5)
+    take_screen()
+    text = pic_to_text()
+    t = text.split(" ")
+    print(t)
+    print(len(t),len(text))
+    #time.sleep(1000)
+    for j in range(10):
+        for i in range(len(text)):
+            if text[i].isalpha() == True:
+                pyautogui.write(text[i])
+            else:
+                pyautogui.press('space')
+            if i == len(text) - 1:
+                pyautogui.press('space')
+                take_screen()
+                text = pic_to_text()
+                print(text)
+            if "Result" in text:
+                quit()
+def fast_bot():
+    time.sleep(5)
+    take_screen()
+    text = pic_to_text()
+    text = text.replace('\n',' ')
+    t = text.split(" ")
+    print(t)
+    print(len(t),len(text))
+    #time.sleep(1000)
+    for j in range(15):
+        for i in range(len(t)):
+            pyautogui.write(t[i])
             pyautogui.press('space')
-        if i == len(text) - 1:
-            pyautogui.press('space')
-            take_screen()
-            text = pic_to_text()
-            print(text)
+            if i == len(t) - 1:
+                #time.sleep(0.01)
+                pyautogui.press('space')
+                take_screen()
+                text = pic_to_text()
+                text = text.replace('\n',' ')
+                t = text.split(" ")
+                print(text)
+            if "Result" in t:
+                    quit()
+fast_bot()
