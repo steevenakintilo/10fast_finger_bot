@@ -19,7 +19,7 @@ def pic_to_text():
     return (main_text)
     #print(main_text)
 
-def slow_bot():
+def slow_bot(time_to_sleep):
     time.sleep(5)
     take_screen()
     text = pic_to_text()
@@ -31,6 +31,7 @@ def slow_bot():
         for i in range(len(text)):
             if text[i].isalpha() == True:
                 pyautogui.write(text[i])
+                time.sleep(time_to_sleep)
             else:
                 pyautogui.press('space')
             if i == len(text) - 1:
@@ -40,7 +41,7 @@ def slow_bot():
                 print(text)
             if "Result" in text:
                 quit()
-def fast_bot():
+def fast_bot(time_to_sleep):
     time.sleep(5)
     take_screen()
     text = pic_to_text()
@@ -53,6 +54,7 @@ def fast_bot():
         for i in range(len(t)):
             pyautogui.write(t[i])
             pyautogui.press('space')
+            time.sleep(time_to_sleep)
             if i == len(t) - 1:
                 #time.sleep(0.01)
                 pyautogui.press('space')
@@ -63,4 +65,4 @@ def fast_bot():
                 print(text)
             if "Result" in t:
                     quit()
-fast_bot()
+fast_bot(0)
