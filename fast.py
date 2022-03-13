@@ -12,7 +12,7 @@ def take_screen():
 def take_screen2(up):
     rm = 0
     if up == 2:
-        rm = 120
+        rm = 160
     if up == 3:
         rm = 60
     if up == 4:
@@ -127,6 +127,6 @@ def fast_bot_multi(time_to_sleep,idx):
             if "sangokuhomer" in t:
                     quit()
 
-time.sleep(1)
-#take_screen2(5)
-fast_bot_multi(0,5)
+time.sleep(5)
+take_screen2(2)
+#fast_bot_multi(0,5)
