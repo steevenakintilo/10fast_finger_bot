@@ -128,5 +128,4 @@ def fast_bot_multi(time_to_sleep,idx):
                     quit()
 
 time.sleep(5)
-take_screen2(2)
-#fast_bot_multi(0,5)
+fast_bot_multi(0,3)
