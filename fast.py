@@ -7,7 +7,7 @@ import sys
 
 def take_screen():
     im1 = pyautogui.screenshot()  # return an image object
-    im2 = pyautogui.screenshot('my_screenshot.png' , region = (200,220,1200,250))  # image name will be as per parameter
+    im2 = pyautogui.screenshot('my_screenshot.png' , region = (300,350,1200,170))  # image name will be as per parameter
 
 def take_screen2(up):
     rm = 0
@@ -81,7 +81,7 @@ def fast_bot(time_to_sleep):
                     quit()
 
 def slow_bot_multi(time_to_sleep,idx):
-    time.sleep(5)
+    #time.sleep(5)
     take_screen2(idx)
     text = pic_to_text()
     t = text.split(" ")
@@ -125,7 +125,7 @@ def fast_bot_multi(time_to_sleep,idx):
                 t = text.split(" ")
                 print(text)
             if "sangokuhomer" in t:
-                    quit()
+                    break
 
-time.sleep(5)
-fast_bot_multi(0,3)
+#time.sleep(5)
+#fast_bot_multi(0,5)
