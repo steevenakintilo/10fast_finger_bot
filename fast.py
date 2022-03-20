@@ -54,14 +54,15 @@ def slow_bot(time_to_sleep):
                 text = pic_to_text()
                 print(text)
             if "Result" in text:
-                quit()
+                break
 def fast_bot(time_to_sleep):
+    print("okokokokok")
     time.sleep(5)
     take_screen()
     text = pic_to_text()
     text = text.replace('\n',' ')
     t = text.split(" ")
-    print(t)
+    #print(t)
     print(len(t),len(text))
     #time.sleep(1000)
     for j in range(15):
@@ -78,10 +79,10 @@ def fast_bot(time_to_sleep):
                 t = text.split(" ")
                 print(text)
             if "Result" in t:
-                    quit()
+                    break
 
 def slow_bot_multi(time_to_sleep,idx):
-    #time.sleep(5)
+    time.sleep(5)
     take_screen2(idx)
     text = pic_to_text()
     t = text.split(" ")
@@ -100,16 +101,16 @@ def slow_bot_multi(time_to_sleep,idx):
                 take_screen2(idx)
                 text = pic_to_text()
                 print(text)
-            if "sangokuhomer" in text:
-                quit()
+            if "sangokuhomer" or "Username" in text:
+                break
 def fast_bot_multi(time_to_sleep,idx):
     time.sleep(5)
     take_screen2(idx)
     text = pic_to_text()
     text = text.replace('\n',' ')
     t = text.split(" ")
-    print(t)
-    print(len(t),len(text))
+    #print(t)
+    #print(len(t),len(text))
     #time.sleep(1000)
     for j in range(15):
         for i in range(len(t)):
@@ -123,9 +124,8 @@ def fast_bot_multi(time_to_sleep,idx):
                 text = pic_to_text()
                 text = text.replace('\n',' ')
                 t = text.split(" ")
-                print(text)
-            if "sangokuhomer" in t:
+                print(len(t),text)
+            if "sangokuhomer" or "Username" in t:
                     break
 
-#time.sleep(5)
-#fast_bot_multi(0,5)
+fast_bot_multi(0,5)
