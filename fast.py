@@ -101,7 +101,7 @@ def slow_bot_multi(time_to_sleep,idx):
                 take_screen2(idx)
                 text = pic_to_text()
                 print(text)
-            if "sangokuhomer" or "Username" in text:
+            if "sangokuhomer" in t or "Username" in text:
                 break
 def fast_bot_multi(time_to_sleep,idx):
     time.sleep(5)
@@ -125,7 +125,5 @@ def fast_bot_multi(time_to_sleep,idx):
                 text = text.replace('\n',' ')
                 t = text.split(" ")
                 print(len(t),text)
-            if "sangokuhomer" or "Username" in t:
+            if "sangokuhomer" in t or "Username" in t:
                     break
-
-fast_bot_multi(0,5)
